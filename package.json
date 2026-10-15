@@ -1,0 +1,11 @@
+{
+  "name": "veyro-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Veyro agency website and three interactive concept demos",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/check.mjs && node scripts/build.mjs"
+  }
+}
