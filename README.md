@@ -15,7 +15,7 @@ A complete static agency showcase with three original, interactive fictional bus
 | --- | --- |
 | `index.html` | Veyro agency and concept portfolio |
 | `pricing.html` | Complete comparison, differences filter, Care cost calculator and FAQs |
-| `contact.html` | Validated brief form, email draft and local text download |
+| `contact.html` | Direct FormSubmit email inquiry and local text download |
 | `starter.html` | SŌL café: focused one-page site, menu, story and inquiry CTA |
 | `business.html` | Atelier Nūn: editorial portfolio, category filters and keyboard-accessible project dialogs |
 | `premium.html` | Sahra: immersive hospitality, suite carousel and date-validated stay preview |
@@ -27,12 +27,12 @@ The demo pages illustrate different design directions. Plan page counts are maxi
 
 All contact settings are in `assets/config.js`. Empty values are deliberate placeholders; the page offers a brief download until a real email is configured. Do not put passwords, API keys or other secrets here: every static file is public.
 
-- `email`: real public business address. A completed inquiry opens a `mailto:` draft; the visitor must send it. There is no claim of automatic delivery.
+- `email`: real public business address. The inquiry posts to FormSubmit, which forwards submissions to this address after the owner activates it. The first submission triggers a confirmation email: open it and activate the form before accepting inquiries. A spam check remains enabled. `thanks.html` is the return page. If changing email, also update the HTML form action for visitors without JavaScript and complete activation for the new address.
 - `whatsapp`: country code and number, digits only. An empty value hides the WhatsApp link.
 - `tallyUrl`: optional public `https://tally.so/r/FORMID` URL. This adds a separately labeled external form link; it does not silently send data.
 - `logoUrl`: relative local image path, such as `assets/my-logo.svg`. Empty keeps the Veyro typographic logo.
 
-Ask your assistant to update these settings if you prefer not to edit code. Style colors are CSS variables at the beginning of `assets/style.css`. All content is readable HTML. Contact submissions are not stored by this site. Update `privacy.html` if you enable analytics, hosted forms or new services.
+Ask your assistant to update these settings if you prefer not to edit code. Style colors are CSS variables at the beginning of `assets/style.css`. All content is readable HTML. Contact submissions are processed by FormSubmit and delivered to the configured inbox; this static site has no inquiry database. Update `privacy.html` if you enable analytics, hosted forms or new services.
 
 ## GitHub Pages deployment — exact steps
 
@@ -66,3 +66,7 @@ Publishing requires suitable repository permissions. Use an eligible account and
 ## Maintenance
 
 Update files on `main` to redeploy. Run `npm run build` before publishing changes. Test at phone and desktop widths. `dist/` is generated and intentionally ignored by Git; branch deployment serves the source files in the repository root.
+
+## Form delivery activation
+
+Direct submission is connected to FormSubmit. The inbox owner must follow the activation email sent by FormSubmit to enable delivery. Check Spam as well as Inbox. After activation, submit one clearly labeled test and confirm receipt. No paid account or custom backend is required. Email delivery has not been independently confirmed from inside the mailbox.
